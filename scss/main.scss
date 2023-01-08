@@ -1,0 +1,786 @@
+@import '_variables';
+@import '_mixins';
+@import 'font-face';
+
+.container {
+    max-width: 1440px;
+    padding: 0;
+    @include min ($md){
+        padding: 0 60px;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+/*contacts*/
+
+.contacts {
+    background: #F5F5FA;
+    grid-template-areas: "contacts" "logo" "menu";
+    padding-top: 14px;
+    &__logo-all {
+        grid-area: logo;
+    }
+    &__logo {
+        display: none;
+    }
+    &__slash {
+        display: none;
+    }
+    &__text {
+        display: none;
+    }
+    &__basic {
+        grid-area: contacts;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    &__language {
+        padding: 0 16px 14px 22px;
+        align-items: center;
+        // margin-right: 106px;
+    }
+    &__lng {
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-right: 14px;
+        a {
+            color: $color-main;
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    &__btn {
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: $main-color;
+        padding: 5px;
+        background: #F0145A;
+        border-radius: 8px;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+        &__dot_new {
+            display: none;
+            padding-top: 6px;
+        }
+        &__address {
+            display: none;
+        }
+        &__dot {
+            display: none;
+            padding-top: 6px;
+        }
+        &__number {
+            font-family: $font-family;
+            font-style: $font-style;
+            font-weight: $font-weight;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            padding-right: 16px;
+            a {
+                color: $color-main;
+                text-decoration: none;
+            }
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        &__messenger {
+            display: none;
+        }
+        &__header-menu {
+            grid-area: menu;
+        }
+            &__menu {
+                display: none;
+                grid-area: menu;
+            }
+
+    @include min ($md) {
+        background: none;
+        margin: 0 auto;
+        grid-template-areas: "contacts" "logo" "menu";
+        padding-top: 50px;
+        &__logo-all {
+            order: 2;
+            width: 100%;
+            margin-top: 34px;
+            grid-area: logo;
+        }
+            &__logo {
+                display: flex;
+                width: 130px;
+                height: 60px;
+            }
+            &__slash {
+                display: flex;
+                height: 47px;
+                margin: 0 4px;
+            }
+            &__text {
+                display: flex;
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 44px;
+                color: #323264;
+            }
+        &__basic {
+            order: 1;
+            width: 100%;
+            justify-content: flex-start;
+            grid-area: contacts;
+        }
+            &__language {
+                padding: 0;
+                align-items: center;
+            }
+            &__info {
+                align-items: center;
+            }
+                &__dot_new {
+                    display: flex;
+                    padding-top: 1px;
+                    margin: 0 6px;
+                }
+                &__address {
+                    display: flex;
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: #B3B3BA;
+                }
+                &__dot {
+                    display: flex;
+                    padding-top: 1px;
+                    margin: 0 6px;
+                }
+                &__messenger {
+                    display: flex;
+                    margin-left: 6px;
+                    padding: 0px 30px 0 0;
+                }
+        &__header-menu {
+            order: 3;
+            margin-top: 30px;
+            grid-area: menu;
+        }
+            &__menu {
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+            }
+            &__maning {
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: $font-weight;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 14px;
+                a {
+                    color: #24A3FF;
+                    text-decoration: none;
+                }
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+                :nth-child(5) {
+                    margin-right: 0;
+                }
+            &__nav-active {
+                flex-direction: column;
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: $font-weight;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 14px;
+                a {
+                    color: #F0145A;
+                    text-decoration: none;
+                }
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                &::after {
+                    content: "";
+                    height: 3px;
+                    background: #F0145A;
+                    bottom: -6px;
+                    left: 42%;
+                    right: 0;
+                    width: 10%;
+                    position: absolute;
+                }
+            }
+        }
+
+        @include min ($lg) {
+            background: none;
+            margin: 0 auto;
+            grid-template-areas: "logo contacts contacts contacts" "logo menu menu menu";
+            &__logo-all {
+                order: 1;
+                margin-top: 0;
+            }
+                &__logo {
+                    display: flex;
+                    width: 130px;
+                    height: 60px;
+                }
+                &__slash {
+                    display: flex;
+                    height: 47px;
+                    margin: 0 4px;
+                }
+                &__text {
+                    display: flex;
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 44px;
+                    color: #323264;
+                }
+            &__basic {
+                order: 2;
+                padding: 0;
+                justify-content: flex-end;
+                margin-bottom: 18px;
+            }
+                &__language {
+                    padding: 0;
+                    align-items: center;
+                }
+                &__info {
+                    padding: 0;
+                    align-items: center;
+                }
+                    &__dot_new {
+                        display: flex;
+                        padding-top: 1px;
+                        margin: 0 6px;
+                    }
+                    &__address {
+                        display: flex;
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: #B3B3BA;
+                    }
+                    &__dot {
+                        display: flex;
+                        padding-top: 1px;
+                        margin: 0 6px;
+                    }
+                    &__messenger {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 6px;
+                        padding: 0;
+                    }
+            &__header-menu {
+                order: 3;
+                margin-top: 0;
+                justify-content: flex-end;
+            }
+                &__menu {
+                    display: flex;
+                    justify-content: flex-end;
+                    position: relative;
+                }
+                &__maning {
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: $font-weight;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-right: 14px;
+                    a {
+                        color: #24A3FF;
+                        text-decoration: none;
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                    :nth-child(5) {
+                        margin-right: 0;
+                    }
+                &__nav-active {
+                    flex-direction: column;
+                   font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: $font-weight; 
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-right: 14px;
+                    a {
+                        color: #F0145A;
+                        text-decoration: none;
+                    }
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                    &::after {
+                        content: "";
+                        height: 3px;
+                        background: #F0145A;
+                        bottom: -4px;
+                        left: 42%;
+                        right: 0;
+                        width: 10%;
+                        position: absolute;
+                    }
+                }
+
+        }
+}
+
+/*pinned*/
+
+.pinned {
+    justify-content: space-between;
+    padding: 0 16px;
+    margin: 16px 0 40px;
+    &__logo-mobile {
+        align-items: center;
+    }
+    &__slash {
+        height: 26px;
+        margin: 0 4px;
+    }
+    &__text {
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #323264;
+    }
+    &__hamburger {
+        align-items: center;
+    }
+    @include min ($md) {
+        justify-content: flex-end;
+        padding: 0 30px 0;
+        margin: 0 0 64px;
+        &__logo-mobile {
+            display: none;
+        }
+        &__slash {
+           display: none;
+        }
+        &__text {
+            display: none;
+        }
+        &__hamburger {
+            display: none;
+            align-items: center;
+        }
+    }
+        @include min ($xl) {
+            padding: 0 60px 0;
+            margin: 0 0 64px;
+        }
+}
+
+/*main*/
+
+.text{
+    margin-bottom: 30px;
+    &__head {
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        font-size: 30px;
+        line-height: 37px;
+        background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding: 0 30px;    }
+        @include min ($md) {
+        &__head {
+            padding: 0;
+            max-width: 664px;
+        }
+        }
+        @include min ($lg) {
+            &__head {
+                max-width: 920px;
+                margin: 0 auto;
+            }
+            }
+}
+
+/*cards*/
+
+.cards {
+    justify-content: center;
+    flex-wrap: wrap;
+    &__item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+        &__photo {
+            padding: 0 30px;
+        }
+        &__header {
+            margin-top: 16px;
+            padding: 0 30px;
+            flex-wrap: wrap;
+        }
+            &__name {
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: $font-weight;
+                font-size: 16px;
+                line-height: 20px;
+                color: #323264;
+                margin-bottom: 6px;
+                min-width: 268px;
+            }
+            &__btn {
+              margin-left: 14px;
+            }
+            &__post {
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                color: #B3B3BA;
+                width: 100%;
+            }
+    @include min ($md) {
+        &__item {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+            &__photo {
+                padding: 0;
+            }
+            &__header {
+                padding: 0;
+            }
+    }
+        @include min ($lg) {
+            &__item {
+                width: 33.333333%;
+                margin-bottom: 0;
+            }
+                &__photo {
+                    width: 60%;
+                    height: 68%;
+                }
+                    &__name {
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: $font-weight;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: #323264;
+                        margin-bottom: 6px;
+                        min-width: 214px;
+                    }
+                    &__btn {
+                    margin-left: 24px;
+                    }
+        }
+}
+
+/*footer*/
+.container-footer {
+    max-width: 1440px;
+    padding: 0;
+}
+
+.information {
+    background: #F5F5FA;
+    &__header {
+        flex-direction: column;
+        padding: 30px;
+        margin-top: 30px;
+    }
+        &__basic {
+            flex-direction: column;
+        }
+        &__street  {
+            flex-direction: column;
+        }
+            &__place {
+                justify-content: center;
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #323264;
+                margin-bottom: 10px;
+            }
+            &__dot {
+                display: none;
+            }
+            &__map {
+                justify-content: center;
+                font-family: $font-family;
+                font-style: $font-style;
+                font-weight: $font-weight;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                a {
+                    color: #24A3FF;
+                    text-decoration: none;
+                }
+                :hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            &__contacts {
+                flex-direction: column;
+            }
+                &__facebook {
+                    margin: 0 auto;
+                }
+                &__number {
+                    justify-content: center;
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: $font-weight;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin: 10px 0;
+                    a {
+                        color: #46466E;
+                        text-decoration: none;
+                    }
+                    :hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+                &__email {
+                    justify-content: center;
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: $font-weight;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-bottom: 30px;
+                    a {
+                        color: #24A3FF;
+                        text-decoration: none;
+                    }
+                    :hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+        &__law {
+            justify-content: center;
+            font-family: $font-family;
+            font-style: $font-style;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #B3B3BA;
+        }
+    @include min ($md) {
+        &__header {
+            flex-direction: column;
+            padding: 30px;
+            margin-top: 30px;
+        }
+            &__basic {
+                flex-direction: column;
+            }
+                &__street  {
+                    flex-direction: row;
+                    padding-left: 184px;
+                    align-items: center;
+                    margin-bottom: 28px;
+                }
+                    &__place {
+                        justify-content: center;
+                        margin-bottom: 0;
+                    }
+                    &__dot {
+                        display: flex;
+                        width: 6px;
+                        height: 6px;
+                        margin: 0 10px;
+                    }
+                    &__map {
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 0;
+                    }
+                &__contacts {
+                    flex-direction: row;
+                    padding-left: 184px;
+                    align-items: center;
+                    margin-bottom: 30px;
+                }
+                    &__facebook {
+                        margin: 0;
+                    }
+                    &__number {
+                        justify-content: center;
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: $font-weight;
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin: 0;
+                        a {
+                            color: #46466E;
+                            text-decoration: none;
+                        }
+                        :hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                    &__email {
+                        justify-content: center;
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: $font-weight;
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin-bottom: 0;
+                    }
+            &__law {
+                justify-content: flex-start;
+                padding-bottom: 0px;
+                padding-left: 184px;
+            }
+    }
+        @include min ($lg) {
+            &__header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 30px 60px;
+                margin-top: 30px;
+            }
+                &__street  {
+                    flex-direction: row;
+                    margin-bottom: 22px;
+                    padding-left: 0;
+                }
+                    &__place {
+                        margin-bottom: 0;
+                        margin-right: 10px;
+                    }
+                    &__dot {
+                        display: flex;
+                        align-self: center;
+                    }
+                    &__map {
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 0;
+                        margin-left: 10px;
+                    }
+                &__contacts {
+                    flex-direction: row;
+                    margin-bottom: 0;
+                    padding-left: 0;
+                }
+                    &__facebook {
+                        margin: 0;
+                        margin-right: 10px;
+                    }
+                    &__number {
+                        justify-content: center;
+                        align-items: center;
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: $font-weight;
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin: 0 10px;
+                        a {
+                            color: #46466E;
+                            text-decoration: none;
+                        }
+                        :hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                    &__email {
+                        justify-content: center;
+                        align-items: center;
+                        font-family: $font-family;
+                        font-style: $font-style;
+                        font-weight: $font-weight;
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin-bottom: 0;
+                        margin-left: 10px;
+                        a {
+                            color: #24A3FF;
+                            text-decoration: none;
+                        }
+                        :hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                &__law {
+                    justify-content: center;
+                    font-family: $font-family;
+                    font-style: $font-style;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #B3B3BA;
+                    padding-bottom: 0;
+                    padding-left: 0;
+                }
+        }
+}

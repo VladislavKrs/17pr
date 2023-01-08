@@ -1,0 +1,12 @@
+
+@mixin min($bp) {
+    @media screen and (min-width: $bp) {
+        @content;
+    }
+}
+
+@mixin max($bp) {
+    @media screen and (max-width: $bp) {
+        @content;
+    }
+}
