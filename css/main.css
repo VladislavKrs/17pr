@@ -185,6 +185,9 @@
     padding-top: 1px;
     margin: 0 6px;
   }
+  .contacts__number {
+    padding-right: 0;
+  }
   .contacts__messenger {
     display: flex;
     margin-left: 6px;
