@@ -3,6 +3,7 @@
 /*font*/
 .container {
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 .d-flex {
@@ -133,7 +134,7 @@
   .contacts__basic {
     justify-content: flex-end;
     flex-wrap: wrap;
-    width: 74%;
+    width: 73%;
   }
   .contacts__language {
     padding: 52px 0 0;
@@ -227,6 +228,7 @@
   .contacts__menu {
     padding-right: 60px;
     margin-top: 18px;
+    width: 100%;
   }
 }
 
@@ -624,6 +626,7 @@
   background-clip: text;
   padding: 0 30px;
   margin-bottom: 30px;
+  line-break: anywhere;
 }
 .team__chef {
   font-family: "Montserrat";

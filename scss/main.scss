@@ -8,6 +8,9 @@
     @include min ($md){
         padding: 0 60px;
     }
+    @include min ($xxl) {
+        margin: 0 auto;
+    }
 }
 
 .d-flex {
@@ -469,6 +472,7 @@
             margin-top: 16px;
             padding: 0 30px;
             flex-wrap: wrap;
+            max-width: 315px;
         }
             &__name {
                 font-family: $font-family;
@@ -478,10 +482,7 @@
                 line-height: 20px;
                 color: #323264;
                 margin-bottom: 6px;
-                min-width: 268px;
-            }
-            &__btn {
-              margin-left: 14px;
+                width: 88%;
             }
             &__post {
                 font-family: $font-family;
@@ -505,13 +506,25 @@
             }
     }
         @include min ($lg) {
+            justify-content: center;
             &__item {
-                width: 33.333333%;
-                margin-bottom: 0;
+                margin-bottom: 30px;
+                margin-right: 60px;
+                width: calc(33.3333% - 60px);
             }
+                :nth-child(3n) {
+                    margin-right: 0;
+                }
                 &__photo {
-                    width: 60%;
-                    height: 68%;
+                    width: 100%;;
+                    object-fit: contain;
+                }
+                    &__faces{
+                        width: 100%;;
+                    }
+                &__header {
+                    max-width: none;
+                    width: 100%;
                 }
                     &__name {
                         font-family: $font-family;
@@ -521,22 +534,32 @@
                         line-height: 20px;
                         color: #323264;
                         margin-bottom: 6px;
-                        min-width: 214px;
+                        width: 86%;
                     }
                     &__btn {
-                    margin-left: 24px;
+                    margin-left: 0px;
                     }
         }
+            @include min ($xl) {
+                &__name {
+                    width: 90%;
+                }
+            }
 }
 
 /*footer*/
+.bgc {
+    background: #F5F5FA;
+}
 .container-footer {
     max-width: 1440px;
     padding: 0;
+    @include min ($xxl) {
+        margin: 0 auto;
+    }
 }
 
 .information {
-    background: #F5F5FA;
     &__header {
         flex-direction: column;
         padding: 30px;
@@ -786,4 +809,5 @@
                     padding-left: 0;
                 }
         }
+            
 }
